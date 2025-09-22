@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Liam Milinazzo Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 250px 1fr; 
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      background: linear-gradient(135deg, #657077, #2d3236);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      grid-area: sidebar;
+      background: #f7f7f7;
+      padding: 1rem;
+      display: flex; 
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+      position: relative;
+    }
+
+    main {
+      grid-area: main;
+      padding: 1rem;
+      overflow-y: auto; 
+    }
+
+    footer {
+      grid-area: footer;
+      background:linear-gradient(135deg, #657077, #2d3236);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    #summary, #education, #experience {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    #summary h2, #education h2, #experience h2 {
+      color: #003366;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #666;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #ddd;
+    }
+
+    #skills {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .skill-group {
+      flex: 1 1 200px;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .project {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25); 
+    }
+    .project img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    .resume-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: linear-gradient(135deg, #657077, #2d3236);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .resume-btn:hover {
+      background: #0055aa;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto;
+      }
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .resume-btn {
+        position: static;
+        margin-top: 10px;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Liam Milinazzo</h1>
+    <h2>Student at NAU studying Immersive Media</h2>
+  </header>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact Information</a>
+    <a class="resume-btn" href="images/Liam Joseph Milinazzo Resume Template (Non-Federal).pdf" download="Liam Joseph Milinazzo Resume Template (Non-Federal).pdf">Download Resume</a>
+  </nav>
+
+  <main>
+    <section id="summary" class="fade-in">
+      <h2>Summary</h2>
+      <p>
+        My name is Liam Milinazzo, I am a 2nd year student attending Northern Arizona University
+        and I am currently studying Immersive Media &amp; Game Dev. I have previously used Java, JavaScript, Python, C# and
+        some local languages for game development apps. My main interests include game development, coding, and soccer.
+      </p>
+    </section>
+
+    <section id="education" class="fade-in">
+      <h2>Education</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Institution</th>
+            <th>Degree</th>
+            <th>Duration</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paradise Valley High School</td>
+            <td>High School Diploma</td>
+            <td>2020–2024</td>
+            <td>Honors, Soccer Captain</td>
+          </tr>
+          <tr>
+            <td>Northern Arizona University (Honors)</td>
+            <td>Immersive Media &amp; Game Dev (B.S.)</td>
+            <td>2024–Present</td>
+            <td>Honors, Career Assistant</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="experience" class="fade-in">
+      <h2>Experience</h2>
+      <p>Currently building projects in immersive media and game development, with experience using Unity, Unreal, and multimedia storytelling.</p>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <div class="skill-group">
+        <h3>Programming Languages</h3>
+        <ul>
+          <li>Python</li>
+          <li>Java</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Creative Tools</h3>
+        <ul>
+          <li>Photoshop</li>
+          <li>Premiere Pro</li>
+          <li>After Effects</li>
+          <li>Blender</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks / Technologies</h3>
+        <ul>
+          <li>Unity</li>
+          <li>Unreal Engine 5</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Leadership</li>
+          <li>Communication</li>
+          <li>Resume Building</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+      <div class="project">
+        <h3>My First Website</h3>
+        <p>This is my first project where I learned basics of HTML.</p>
+        <img src="images/website.JPG" alt="Homepage of my first website">
+      </div>
+      <div class="project">
+        <h3>Code Screenshot</h3>
+        <img src="images/code.JPG" alt="Code sample">
+      </div>
+      <div class="project">
+        <h3>Photography Work</h3>
+        <img src="images/IMG_8930.jpeg" alt="Sample photography">
+      </div>
+      <div class="project">
+        <h3>Documentary Still</h3>
+        <img src="images/IMG_1704.JPG" alt="Documentary still">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contact fade-in" id="contact">
+      <p>
+        Email: <a href="mailto:ljm454@nau.edu">ljm454@nau.edu</a> |
+        Phone: <a href="tel:+14807380442">(480) 738-0442</a> |
+        <a href="https://github.com/LiamJMilinazzo" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/liam-milinazzo-213a97358/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.style.animationDelay = "0.2s";
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
